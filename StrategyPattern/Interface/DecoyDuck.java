@@ -1,8 +1,8 @@
-package StrategyPattern.AbstractClass;
+package StrategyPattern.Interface;
 
-public class DecoyDuck extends Duck{
+public class DecoyDuck extends Duck implements Flyable, Quackable {
     @Override
-    void quack() {
+    public void quack() {
         muteQuack();
     }
     private void muteQuack() {
@@ -23,7 +23,7 @@ public class DecoyDuck extends Duck{
     }
 
     @Override
-    void fly() {
+    public void fly() {
         handThrowing();
     }
     private void handThrowing() {
