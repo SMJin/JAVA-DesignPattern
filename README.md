@@ -1,5 +1,6 @@
 # Welcome to JAVA DesignPattern Class !
 ##### 이 레파지토리는 대학 강좌 디자인패턴 수업을 들으면서 작성된 코드입니다.
+##### 수업 정보 : DKU Design Pattern (professor. Yongbeom Bark)
 ##### 교제 정보 : Head First Design Pattern
 
 ### Strategy Pattern
