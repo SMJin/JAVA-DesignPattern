@@ -42,6 +42,32 @@
 ##### [java.util.Observable Class 공식문서 바로가기](https://docs.oracle.com/javase/10/docs/api/java/util/Observable.html)
 ##### UML
 ![inline-block](./ObservableClass/ObserverPattern_ObservableClass.png)
+### setChanged() 메소드가 추가된 이유
+##### setChanged() 메소드는 상태가 바뀌었다는 것을 밝히기 위한 용도로 쓰인다. setChanged() 가 호출되지 않은 상태에서 notifyObservers()가 호출되면 Observer 들한테 아무 연락도 가지 않게 된다.
+```java
+setChanged() {
+    changed = true
+        }
+notifyObservers(Object org) {
+    if(changed) {
+        목록에 있는 모든 옵저버에 대해 {
+            update(this, arg)
+        }
+        changed = false
+    }
+}
+notifyObservers() {
+    notifyObservers(null)
+}
+```
+##### 이러한 setChanged() 메소드가 필요한 이유는 연락을 최적화할 수 있게 해줌으로써 Observer 들을 갱신하는 방법에 있어서 더 광범위한 유연성을 제공하기 위해서이다. 예를 들어, Weather Station 에 있는 온더 센서가 워낙 민감해서 0.1도 단위로 쉴 새없이 값이 바뀐다고 하자. 그러면 WeatherData 에서도 끊임없이 연락을 돌려야 한다. 하지만 필요에 따라 온도가 0.5도 이상 바뀌었을 때만 연락을 돌리고 싶을 때, 바로 그런 경우에 setChanged() 를 조건에 따라 호출함으로써 원하는 바를 달성할 수 있다.
+##### 이런 식으로 쓸 일이 거의 없을 수도 있지만, 이렇게 할 수 있다는 것 정도는 알아두는 것이 좋다. 또한, setChanged() 와 같은 방식으로 쓰이는 clearChanged() 라는 메소드도 있는데, 이 메소드는 상태가 변경된 것을 나타내는 changed 플래그를 거짓으로 돌려놓는 역할을 한다. 그리고 hasChanged() 라는 메소드는 changed 플래그의 현재 상태를 알려준다.
+
+# Observable 클래스의 단점
+##### 안타깝게도 Observable 은 인터페이스가 아닌 클래스이기 때문에, 서브클래스를 만들어야 한다는 점이 문제점이다. 인터페이스에 맞춰서 프로그래밍해야 한다는 객체지향 디자인 원칙에 위배되기도 하고, 이미 다른 super class 를 확장하고 있는 클래스에 Observable 의 기능을 추가할 수 없다. 그래서 재사용성에 제약이 생기게 된다.
+##### Observable Interface 라는 것이 없기 때문에 JAVA 에 내장된 Observer API 하고 잘 맞는 클래스를 직접 구현하는 것이 불가능하다. java.util 구현을 다른 구현으로 바꾸는 것도 불가능하다. (예를 들어 멀티스레드로 구현한다거나 하는 일이 아예 불가능하다.)
+##### Observable Class 의 핵심 메소드인 setChanged() 메소드가 protected 로 선언되어 있기 때문에 외부에서 이 메소드를 호출할 수 없다. 결국 특정 외부 클래스에서 Observable 서브클래스를 인스턴스 변수로 사용하는 방법도 써먹을 수가 없다. 이런 디자인은 상속보다 구성을 사용한다는 디자인 원칙에도 위배된다.
+
 
 # 콘솔 결과창 (Console)
 ##### WeatherStation Console
