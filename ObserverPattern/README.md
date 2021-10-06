@@ -35,10 +35,6 @@
 # 기상 스테이션 구현 예제 (WeatherStation)
 ##### UML
 ![inline-block](./WeatherStation/ObserverPattern_WeatherStation.png)
-##### WeatherStation Console
-![inline-block](./WeatherStation/WeatherStation%20Console.png)
-##### WeatherStationHeatIndex Console
-![inline-block](./WeatherStation/WeatherStationHeatIndex%20Console.png)
 
 # 자바 내장 Observable 클래스 (ObservableClass)
 ##### 자바에서는 자체적으로 옵저버패턴을 지원하고 있다. java.util 패키지에 들어있는 Observer Interface 와 Observable Class 가 그 예시이다. 이 두 클래스는 앞서 WeatherStation 예제에서의 Subject 와 Observer Interface 와 매우 비슷하지만, 더 많은 기능들을 제공한다. 또한 푸시 방식으로 갱신할 수도 있고, 풀 방식으로 갱신할 수도 있다.
@@ -46,6 +42,8 @@
 ##### [java.util.Observable Class 공식문서 바로가기](https://docs.oracle.com/javase/10/docs/api/java/util/Observable.html)
 ##### UML
 ![inline-block](./ObservableClass/ObserverPattern_ObservableClass.png)
+
+# 콘솔 결과창 (Console)
 ##### WeatherStation Console
 ![inline-block](./ObservableClass/WeatherStation%20Console.png)
 ##### WeatherStationHeatIndex Console
