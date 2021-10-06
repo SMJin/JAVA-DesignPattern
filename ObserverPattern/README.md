@@ -33,4 +33,9 @@
 ![inline-block](./ObserverPattern/ObserverPattern.png)
 
 # 기상 스테이션 구현 예제 (WeatherStation)
+##### UML
 ![inline-block](./WeatherStation/ObserverPattern_WeatherStation.png)
+##### WeatherStation Console
+![inline-block](./WeatherStation/WeatherStation%20Console.png)
+##### WeatherStationHeatIndex Console
+![inline-block](./WeatherStation/WeatherStationHeatIndex%20Console.png)
