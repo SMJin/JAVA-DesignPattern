@@ -25,3 +25,6 @@
 ##### 동기 : 사용할 개체는 필요한 기본 기능을 수행합니다. 그러나 개체의 기본 기능 전후에 발생하는 일부 기능을 개체에 추가해야 할 수도 있습니다.
 ###### Solution : Allows for extending the functionality of an object without resorting to sub-classing.
 ##### 해결 : 하위 분류에 의존하지 않고 개체의 기능을 확장할 수 있습니다.
+
+# 데코레이터 패턴 (DecoratorPattern)
+![inline-block](./DecoratorPattern/DecoratorPattern_DecoratorPattern.png)
