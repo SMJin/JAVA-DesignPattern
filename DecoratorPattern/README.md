@@ -28,3 +28,30 @@
 
 # 데코레이터 패턴 (DecoratorPattern)
 ![inline-block](./DecoratorPattern/DecoratorPattern_DecoratorPattern.png)
+##### 사용법 및 Console 출력
+```java
+package DecoratorPattern.DecoratorPattern;
+
+public class StarbuzzCoffee {
+
+    public static void main(String[] args) {
+        Beverage beverage = new Espresso();
+        System.out.println(beverage.getDescription() + " $" + beverage.cost());
+
+        beverage = new DarkRoast();
+        beverage = new Mocha(beverage);
+        beverage = new Mocha(beverage);
+        beverage = new Whip(beverage);
+        System.out.println(beverage.getDescription() + " $" + beverage.cost());
+
+        beverage = new HouseBlend();
+        beverage = new Soy(beverage);
+        beverage = new Mocha(beverage);
+        beverage = new Whip(beverage);
+        System.out.println(beverage.getDescription() + " $" + beverage.cost());
+
+    }
+
+}
+```
+![inline-block](./DecoratorPattern/DecoratorPattern_StarbuzzCoffee_Console.png)
