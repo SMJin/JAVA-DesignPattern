@@ -55,3 +55,6 @@ public class StarbuzzCoffee {
 }
 ```
 ![inline-block](./DecoratorPattern/DecoratorPattern_StarbuzzCoffee_Console.png)
+
+# 데코레이터 패턴 확장해보기 (ExpandDecoratorPattern)
+##### 스타버즈 커피 전문점에 각 커피별 사이즈(Tall, Grande, Venti)도 추가
