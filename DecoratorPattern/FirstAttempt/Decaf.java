@@ -1,6 +1,6 @@
-package DecoratorPattern.FirstSolution;
+package DecoratorPattern.FirstAttempt;
 
-public class Decaf extends Berverage{
+public class Decaf extends Beverage {
     public Decaf() {
         description = "Decaf is the best decaffeinated coffee !\n";
     }

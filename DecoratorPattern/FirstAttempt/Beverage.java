@@ -1,6 +1,6 @@
-package DecoratorPattern.FirstSolution;
+package DecoratorPattern.FirstAttempt;
 
-public abstract class Berverage {
+public abstract class Beverage {
     public String description = "";
     private boolean milk = false;
     private boolean soy = false;

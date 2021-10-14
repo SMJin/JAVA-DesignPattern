@@ -1,6 +1,6 @@
-package DecoratorPattern.FirstSolution;
+package DecoratorPattern.FirstAttempt;
 
-public class HouseBlend extends Berverage{
+public class HouseBlend extends Beverage {
     public HouseBlend() {
         description = "HouseBlend is combining two different beans to produce different flavors and strengths...\n";
     }

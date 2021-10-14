@@ -1,6 +1,6 @@
-package DecoratorPattern.FirstSolution;
+package DecoratorPattern.FirstAttempt;
 
-public class Espresso extends Berverage{
+public class Espresso extends Beverage {
     public Espresso() {
         description = "Espresso is coffee-brewing method of Italian origin, in which a small amount of nearly boiling water is forced under pressure through finely-ground coffee beans.\n";
     }

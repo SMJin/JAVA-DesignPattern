@@ -1,8 +1,8 @@
-package DecoratorPattern.FirstSolution;
+package DecoratorPattern.FirstAttempt;
 
 public class StarbuzCoffee {
     public static void main(String[] args) {
-        Berverage berverage = new HouseBlend();
+        Beverage berverage = new HouseBlend();
         berverage.setMocha();
         System.out.println(berverage.getDescription());
 

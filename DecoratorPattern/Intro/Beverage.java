@@ -1,7 +1,7 @@
 package DecoratorPattern.Intro;
 
-public abstract class Berverage {
-    public String description = "";
+public abstract class Beverage {
+    public String description = "Unknown Beverage";
 
     public String getDescription() {
         return description;

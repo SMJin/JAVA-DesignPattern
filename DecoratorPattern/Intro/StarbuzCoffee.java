@@ -2,7 +2,7 @@ package DecoratorPattern.Intro;
 
 public class StarbuzCoffee {
     public static void main(String[] args) {
-        Berverage berverage = new HouseBlend();
+        Beverage berverage = new HouseBlend();
         System.out.println(berverage.getDescription());
 
         berverage = new DarkRoast();
