@@ -54,3 +54,4 @@ Pizza orderPizza(String type) {
 ![inline-block](./FactoryEncapsulation/pizzaFactory.png)
 
 # 피자 가게 프레임워크 - 프랜차이즈 만들기 (PizzaFranchise)
+![inline-block](./PizzaFranchise/create-product.png)
