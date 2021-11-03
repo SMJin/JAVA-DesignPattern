@@ -1,0 +1,122 @@
+## Singleton Pattern 이해하기
+
+# 고전적인 싱글턴 패턴 (Classic)
+`````java
+public class Singleton {
+    private static Singleton uniqueInstance;
+    
+    /*
+     * 생성자를 private 로 선언했기 때문에 
+     * Singleton 내부에서만 클래스의 인스턴스를 생성할 수 있다.
+     * */
+    private Singleton() { }
+    
+    public static Singleton getInstance() {
+        if (uniqueInstance == null) {
+            uniqueInstance = new Singleton();
+        }
+        return uniqueInstance;
+    }
+}
+`````
+
+# 초콜릿 공장 실습 (ChocolateBoiler)
+##### <이전 코드>
+`````java
+public class ChocolateBoiler {
+	private boolean empty;
+	private boolean boiled;
+  
+	public ChocolateBoiler() {
+		empty = true;
+		boiled = false;
+		System.out.println(this);
+	}
+  
+	public void fill() {
+		if (isEmpty()) {
+			empty = false;
+			boiled = false;
+			// fill the boiler with a milk/chocolate mixture
+		}
+	}
+ 
+	public void drain() {
+		if (!isEmpty() && isBoiled()) {
+			// drain the boiled milk and chocolate
+			empty = true;
+		}
+	}
+ 
+	public void boil() {
+		if (!isEmpty() && !isBoiled()) {
+			// bring the contents to a boil
+			boiled = true;
+		}
+	}
+  
+	public boolean isEmpty() {
+		return empty;
+	}
+ 
+	public boolean isBoiled() {
+		return boiled;
+	}
+}
+`````
+
+##### <싱글턴패턴으로 바꾼 코드>
+`````java
+public class ChocolateBoiler {
+	private boolean empty;
+	private boolean boiled;
+	
+	// 클래스 내부에 변수 형태로 유일의 인스턴스 선언
+	private static ChocolateBoiler chocolateBoiler = null;
+  
+	// 생성자가 public -> private 로 바뀌었다.
+	private ChocolateBoiler() {
+		empty = true;
+		boiled = false;
+		System.out.println(this);
+	}
+	
+	// 인스턴스를 유일하게 부르기 위한 public 메소드 추가
+	public static ChocolateBoiler getInstance() {
+	    if (chocolateBoiler == null) {
+	        chocolateBoiler = new ChocolateBoiler();
+        }
+	    return chocolateBoiler;
+    }
+  
+	public void fill() {
+		if (isEmpty()) {
+			empty = false;
+			boiled = false;
+			// fill the boiler with a milk/chocolate mixture
+		}
+	}
+ 
+	public void drain() {
+		if (!isEmpty() && isBoiled()) {
+			// drain the boiled milk and chocolate
+			empty = true;
+		}
+	}
+ 
+	public void boil() {
+		if (!isEmpty() && !isBoiled()) {
+			// bring the contents to a boil
+			boiled = true;
+		}
+	}
+  
+	public boolean isEmpty() {
+		return empty;
+	}
+ 
+	public boolean isBoiled() {
+		return boiled;
+	}
+}
+`````
