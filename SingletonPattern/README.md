@@ -125,4 +125,56 @@ public class ChocolateBoiler {
 ##### 싱글턴 패턴은 해당 클래스의 인스턴스가 하나만 만들어지고, 어디서든지 그 인스턴스에 접근할 수 있도록 하기 위한 패턴이다.
 ![inline-block](./singleton.png)
 
-# 그러나, 문제 발생!!
+# 그러나, 문제 발생!! (multi-threading)
+![inline-block](./chocolate-multi-threading.png)
+##### 멀티스레딩으로 코드가 겹치게 되면 우리의 첫 목적을 달성하지 못한다. 서로 다른 인스턴스가 2개나 생기게 되는 것이다.
+
+# 멀티스레딩 해결 (SingletonPattern)
+##### 동기화 시키기
+```java
+public class Singleton {
+    private static Singleton uniqueInstance;
+    
+    private Singleton() { }
+    
+    public static synchronized Singleton getInstance() {
+        if (uniqueInstance == null) {
+            uniqueInstance = new Singleton();
+        }
+        return uniqueInstance;
+    }
+}
+```
+
+##### 인스턴스를 필요할 때 생성하지 말고, 처음부터 만들어 버리기
+```java
+public class Singleton {
+    private static Singleton uniqueInstance = new Singleton();
+    
+    private Singleton() { }
+    
+    public static Singleton getInstance() {
+        return uniqueInstance;
+    }
+}
+```
+
+##### DCL(Double-Checking Locking)을 사용해서 getInstance()에서 동기화 되는 부분을 줄이기
+```java
+public class Singleton {
+    private volatile static Singleton uniqueInstance;
+    
+    private Singleton() { }
+    
+    public static Singleton getInstance() {
+        if (uniqueInstance == null) {
+            synchronized (Singleton.class) {
+                if (uniqueInstance == null) {
+                    uniqueInstance = new Singleton();
+                }
+            }
+        }
+        return uniqueInstance;
+    }
+}
+```
