@@ -19,3 +19,7 @@
 ##### Command Interface : 모든 커맨드 객체에서 구현해야 하는 인터페이스. 모든 명령은 execute() 메소드 호출을 통해 수행되며, 이 메소드에서는 리시버에 특정 작업을 처리하라는 지시를 전달한다. 이 인터페이스를 보면 앞선 실행을 취소하는 undo() 메소드도 들어있다.
 ##### ConcreteCommand : 특정 행동과 리시버 사이를 연결해 준다. 인보커에서 execute() 호출을 통해 요청을 하면 ConcreteCommand 객체에서 리시버에 있는 메소드를 호출함으로써 그 작업을 처리한다. 즉, execute() 메소드에서는 리시버에 있는 메소드를 호출하여 요청된 작업을 수행한다.
 ![inline-block](./Definition/Command_slot.jpg)
+
+# 두 번째 커맨드 객체 (RemoteController2)
+![inline-block](./RemoteController2/CommandPattern_RemoteController2.png)
+##### 이 때, 인보커는 RemoteControl 클래스인 리모콘이고, 리시버는 CeilingFan, GarageDoor, Light, Stereo 등 직접적으로 영향을 받는 물체이다. 각 물체는 각자 자신에 맞는 action 들을 보유하고 있다.
