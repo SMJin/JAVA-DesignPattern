@@ -9,3 +9,13 @@
 
 # 첫 번째 커맨드 객체 (RemoteController)
 ![inline-block](./RemoteController/CommandPattern_SimpleRemote.png)
+
+# 정의 (Definition)
+##### 커맨드 패턴을 이용하면 요구 사항을 객체로 캡슐화 할 수 있으며, 매개변수를 써서 여러 가지 다른 요구 사항을 집어넣을 수도 있다. 또한 요청 내역을 큐에 저장하거나 로그로 기록할 수도 있으며, 작업취소 기능도 지원 가능하다.
+##### 커맨드 객체는 일련의 행동을 특정 리시버하고 연결시킴으로써 요구 사항을 캡슐화한 것이다. 이를 위해 행동과 리시버를 한 객체에 집어넣고, execute() 라는 메소드 하나만 외부에 공개하는 방법을 사용한다. 외부에서 볼 때는 어떤 객체가 리시버 역할을 하는지, 그 리시버에서 실제로 어떤 일을 하는지 알 수 없다. 그냥 execute() 메소드를 호출하면 요구 사항이 처리된다는 것만 알 수 있을 뿐이다.
+![inline-block](./Definition/CommandPattern_Definition.png)
+##### Client Class : ConcreteCommand 를 생성하고 Receiver 를 설정한다.
+##### Invoker Class : 명령이 들어있으며, execute() 메소드를 호출함으로써 커맨드 객체에게 특정 작업을 수행해 달라는 요구를 하게 된다.
+##### Command Interface : 모든 커맨드 객체에서 구현해야 하는 인터페이스. 모든 명령은 execute() 메소드 호출을 통해 수행되며, 이 메소드에서는 리시버에 특정 작업을 처리하라는 지시를 전달한다. 이 인터페이스를 보면 앞선 실행을 취소하는 undo() 메소드도 들어있다.
+##### ConcreteCommand : 특정 행동과 리시버 사이를 연결해 준다. 인보커에서 execute() 호출을 통해 요청을 하면 ConcreteCommand 객체에서 리시버에 있는 메소드를 호출함으로써 그 작업을 처리한다. 즉, execute() 메소드에서는 리시버에 있는 메소드를 호출하여 요청된 작업을 수행한다.
+![inline-block](./Definition/Command_slot.jpg)
