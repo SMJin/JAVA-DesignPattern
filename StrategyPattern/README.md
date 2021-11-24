@@ -1,10 +1,10 @@
 ## Strategy Pattern 이해하기
 
-# 도입 (Intro)
+# 도입 ([Intro](./Intro))
 ##### 우리는 자바의 다형성을 사랑한다. 지금껏 Pet interface 를 상속받는 Dog class 와 Cat class 를 만들면서 인터페이스 구현을 이용해 다형성을 지켰다며 뿌듯해했다. 그러나, 정말 이게 최선일까?
 ![inline-block](./Intro/UMLet-Strategy-Intro.png)
 
-# 추상 클래스 상속 다형성 구현 (AbstractClass)
+# 추상 클래스 상속 다형성 구현 ([AbstractClass](./AbstractClass))
 ##### 평소처럼 상속을 이용해 다형성을 구현하기 위해서 Duck 추상 클래스를 만들었다. 그리고 그 클래스를 MallardDuck Class, RedHeadDuck Class 가 상속을 하도록 만들었다.
 ![inline-block](./AbstractClass/duck-1.png)
 
@@ -23,13 +23,13 @@
 ##### 넷 째, 코드를 변경했을 때 다른 오리들한테 원치 않는 영향을 끼칠 수 있다.
 ###### 한 마리의 오리에 대해서만 특징을 살리는 수정을 하고 싶은데, 추상 클래스의 메소드를 변경하면 모든 오리에게 영향을 미치게 되고 만다.
 
-# 인터페이스로 특징 메소드 구현 (Interface)
+# 인터페이스로 특징 메소드 구현 ([Interface](./Interface))
 ##### 그렇다면 인터페이스를 활용해보자! 일단, 던지는 행동과 울음 소리를 내는 행동에서 차이가 많이 갈리므로 그 둘의 행동에 대해서 인터페이스로 정의해보자.
 ![inline-block](./Interface/duck-3.png)
 ##### 안타깝게도, 이 또한 좋은 선택이 아니다. 코드는 또 다시 중복될 것이기 때문이다. 이렇게 할 바에는 차라리 상속 Override 방식이 더 나을 수도 있다. 그러니까, 서브클래스마다 오리의 행동이 바뀔 수 있는데도 모든 서브클래스에서 한 행동을 사용하도록 했기 때문에 좋지 않은 것이다. 해당 인터페이스를 구현하는 모든 서브클래스가 각자 개별로 정의되어야 하며, 또 행동을 바꿀 때마다 그 행동이 정의되어 있는 서로 다른 서브클래스들을 전부 찾아서 코드를 일일히 고쳐야 한다.
 ##### 그리고, 가장 중요한 문제점이 있다. 바로 디자인패턴의 5가지 설계원칙 SOLID 중 첫 번째 원칙인 "SRP ;Single Responsibility Principle" 단일 책임 원칙을 위배한다는 것이다. "모든 클래스는 하나의 책임만을 가져야" 하는 데 그러지 못하고 있다.
 
-# 인터페이스로 행동을 정의하고 특징별로 클래스 만들기 (StrategyPattern)
+# 인터페이스로 행동을 정의하고 특징별로 클래스 만들기 ([StrategyPattern](./StrategyPattern))
 ![inline-block](./Interface/duck-4.png)
 #### 이것이 바로 strategy pattern 이다.
 ##### 각 행동은 인터페이스 FlyBehavior, QuackBehavior 로 표현하고 행동을 구현할 때 이런 인터페이스를 구현하도록 한다. 즉, 특정 행동만을 목적으로 하는 클래스의 집합을 만들게 된 것이다. 행동(behavior) 인터페이스는 Duck 클래스가 아닌 행동 클래스에서 구현한다.
