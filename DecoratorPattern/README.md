@@ -1,6 +1,6 @@
 ## Decorator Pattern 이해하기
 
-# 도입 (Intro)
+# 도입 ([Intro](./Intro))
 ##### 여기 스타버즈 커피 전문점이 있습니다. 이 커피 전문점에서는 다양한 커피를 팔고 있으며, 처음에 사업을 시작할 때는 커피의 종류가 그렇게 많지 않아서 다음과 같은 로직으로 구성되어 있었습니다.
 ![inline-block](./Intro/Decorator-intro.png)
 
@@ -10,7 +10,7 @@
 ##### 으악! 뭐가 뭔지 하나도 모르겠어 ~!!!
 ##### 결정적으로, OCP ; Open/Close Principle 개방 폐쇄 원칙(소프트웨어 객체는 확장에 대해 열려있어야 하지만, 수정에 대해서는 닫혀있어야 하며, 자신의 변화에 대해서는 폐쇄적이지만, 외부의 변화에 대해서는 확정에 개방적이어야 한다는 원칙)을 준수하고 있지 않다. 
 
-# 해치웠나? (FirstAttempt)
+# 해치웠나? ([FirstAttempt](./FirstAttempt))
 ![inline-block](./FirstAttempt/Decorator-firstAttempt.png)
 ##### 이렇게 만들면 클래스가 5개면 됩니다. 각 커피를 만들었을 때 예를 들어 우유를 추가하고 싶다면, setMilk()를 해주면 그만입니다.
 ##### 그러나, 정말 이게 최선일까?
@@ -26,7 +26,7 @@
 ###### Solution : Allows for extending the functionality of an object without resorting to sub-classing.
 ##### 해결 : 하위 분류에 의존하지 않고 개체의 기능을 확장할 수 있습니다.
 
-# 데코레이터 패턴 (DecoratorPattern)
+# 데코레이터 패턴 ([DecoratorPattern](./DecoratorPattern))
 ![inline-block](./DecoratorPattern/DecoratorPattern_DecoratorPattern.png)
 ##### 사용법 및 Console 출력
 ```java
@@ -56,6 +56,6 @@ public class StarbuzzCoffee {
 ```
 ![inline-block](./DecoratorPattern/DecoratorPattern_StarbuzzCoffee_Console.png)
 
-# 데코레이터 패턴 확장해보기 (ExpandDecoratorPattern)
+# 데코레이터 패턴 확장해보기 ([ExpandDecoratorPattern](./ExpandDecoratorPattern))
 ##### 스타버즈 커피 전문점에 각 커피별 사이즈(Tall, Grande, Venti)도 추가
 ![inline-block](./ExpandDecoratorPattern/Decorator-expand.png)
