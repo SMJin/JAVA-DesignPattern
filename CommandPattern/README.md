@@ -7,7 +7,7 @@
 ##### 4. makeBurger(), makeShake() : Order 객체에는 음식을 준비하기 위한 모든 지시 사항이 들어있다. Order 객체가 주방장한테 makeBurger() 같은 메소드 호출을 통해 지시를 내린다.
 ##### 5. 결과 : 주방장은 Order 에서 전달받은 지시사항에 따라 음식을 준비한다. 실제로 식사를 준비하는 방법은 주방장만 알고 있다. 주방장과 웨이트리스는 완전히 분리되어 있다는 점을 잘 살펴보라. 웨이트리스는 각 주문서에 있는 메소드를 호출할 뿐이고, 주방장은 주문서로부터 할 일을 전달 받는다.
 
-# 첫 번째 커맨드 객체 (RemoteController)
+# 첫 번째 커맨드 객체 ([RemoteController](./RemoteController))
 ![inline-block](./RemoteController/CommandPattern_SimpleRemote.png)
 
 # 정의 (Definition)
@@ -20,6 +20,6 @@
 ##### ConcreteCommand : 특정 행동과 리시버 사이를 연결해 준다. 인보커에서 execute() 호출을 통해 요청을 하면 ConcreteCommand 객체에서 리시버에 있는 메소드를 호출함으로써 그 작업을 처리한다. 즉, execute() 메소드에서는 리시버에 있는 메소드를 호출하여 요청된 작업을 수행한다.
 ![inline-block](./Definition/Command_slot.jpg)
 
-# 두 번째 커맨드 객체 (RemoteController2)
+# 두 번째 커맨드 객체 ([RemoteController2](./RemoteController2))
 ![inline-block](./RemoteController2/CommandPattern_RemoteController2.png)
 ##### 이 때, 인보커는 RemoteControl 클래스인 리모콘이고, 리시버는 CeilingFan, GarageDoor, Light, Stereo 등 직접적으로 영향을 받는 물체이다. 각 물체는 각자 자신에 맞는 action 들을 보유하고 있다.
