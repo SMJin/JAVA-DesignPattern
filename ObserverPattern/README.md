@@ -32,11 +32,11 @@
 # 옵저버패턴 (ObserverPattern)
 ![inline-block](./ObserverPattern/ObserverPattern.png)
 
-# 기상 스테이션 구현 예제 (WeatherStation)
+# 기상 스테이션 구현 예제 ([WeatherStation](./WeatherStation))
 ##### UML
 ![inline-block](./WeatherStation/ObserverPattern_WeatherStation.png)
 
-# 자바 내장 Observable 클래스 (ObservableClass)
+# 자바 내장 Observable 클래스 ([ObservableClass](./ObservableClass))
 ##### 자바에서는 자체적으로 옵저버패턴을 지원하고 있다. java.util 패키지에 들어있는 Observer Interface 와 Observable Class 가 그 예시이다. 이 두 클래스는 앞서 WeatherStation 예제에서의 Subject 와 Observer Interface 와 매우 비슷하지만, 더 많은 기능들을 제공한다. 또한 푸시 방식으로 갱신할 수도 있고, 풀 방식으로 갱신할 수도 있다.
 ##### [java.util.Observer Interface 공식문서 바로가기](https://docs.oracle.com/javase/10/docs/api/java/util/Observer.html)
 ##### [java.util.Observable Class 공식문서 바로가기](https://docs.oracle.com/javase/10/docs/api/java/util/Observable.html)
@@ -67,10 +67,3 @@ notifyObservers() {
 ##### 안타깝게도 Observable 은 인터페이스가 아닌 클래스이기 때문에, 서브클래스를 만들어야 한다는 점이 문제점이다. 인터페이스에 맞춰서 프로그래밍해야 한다는 객체지향 디자인 원칙에 위배되기도 하고, 이미 다른 super class 를 확장하고 있는 클래스에 Observable 의 기능을 추가할 수 없다. 그래서 재사용성에 제약이 생기게 된다.
 ##### Observable Interface 라는 것이 없기 때문에 JAVA 에 내장된 Observer API 하고 잘 맞는 클래스를 직접 구현하는 것이 불가능하다. java.util 구현을 다른 구현으로 바꾸는 것도 불가능하다. (예를 들어 멀티스레드로 구현한다거나 하는 일이 아예 불가능하다.)
 ##### Observable Class 의 핵심 메소드인 setChanged() 메소드가 protected 로 선언되어 있기 때문에 외부에서 이 메소드를 호출할 수 없다. 결국 특정 외부 클래스에서 Observable 서브클래스를 인스턴스 변수로 사용하는 방법도 써먹을 수가 없다. 이런 디자인은 상속보다 구성을 사용한다는 디자인 원칙에도 위배된다.
-
-
-# 콘솔 결과창 (Console)
-##### WeatherStation Console
-![inline-block](./ObservableClass/WeatherStation%20Console.png)
-##### WeatherStationHeatIndex Console
-![inline-block](./ObservableClass/WeatherStationHeatIndex%20Console.png)
