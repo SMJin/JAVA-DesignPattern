@@ -50,10 +50,10 @@ Pizza orderPizza(String type) {
 }
 `````
 
-# Factory 만들기 (FactoryEncapsulation)
+# Factory 만들기 ([FactoryEncapsulation](./FactoryEncapsulation))
 ![inline-block](./FactoryEncapsulation/pizzaFactory.png)
 
-# 피자 가게 프레임워크 - 프랜차이즈 만들기 (PizzaFranchise)
+# 피자 가게 프레임워크 - 프랜차이즈 만들기 ([PizzaFranchise](./PizzaFranchise))
 ![inline-block](./PizzaFranchise/create-product.png)
 
 # 정의 (Definition)
@@ -64,5 +64,5 @@ Pizza orderPizza(String type) {
 ##### STRIDE 중 DIP; Dependency Inversion Principle (의존성 뒤집기 원칙)이란, 추상화된 것에 의존하도록 만들어야 하며, 구상 클래스에 의존하지 않도록 설계해야 한다는 원칙이다.
 ##### 앞선 클래스들에서 PizzaStore 는 "고수준 구성요소"라고 할 수 있고, 피자 클래스들은 "저수준 구성요소"라고 할 수 있다. 그러나 PizzaStore 클래스는 구상 피자 클래스들에 의존하고 있다. 바로 이 점이 문제인 것이다.
 
-# (최종)원재료 공장 만들기 (Abstract Factory)
+# (최종)원재료 공장 만들기 ([Abstract Factory](./Abstract Factory))
 ![inline-block](./AbstractFactory/AbstractFactory.png)
