@@ -1,4 +1,4 @@
-package TemplatePattern.CaffeineBeverage;
+package TemplateMethodPattern.CaffeineBeverage;
 
 public class Coffee extends CaffeineBeverage{
     @Override

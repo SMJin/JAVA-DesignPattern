@@ -1,4 +1,4 @@
-package TemplatePattern.CaffeineBeverage;
+package TemplateMethodPattern.CaffeineBeverage;
 
 public abstract class CaffeineBeverage {
     public abstract void prepareRecipe();
