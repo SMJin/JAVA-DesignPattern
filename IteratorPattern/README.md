@@ -17,3 +17,7 @@
 #### 자바에는 java.util.Iterator 를 import 해서 사용할 수 있다.
 #### ArrayList 의 경우 이 라이브러리를 사용할 수 있기에 PancakeHouseMenu 의 경우 사용이 가능하다.
 ![inline-block](./JavaUtilIterator/Iterator-IteratorPattern(2).png)
+
+# 정의 (Definition)
+#### 컬렉션 구현 방법을 노출시키지 않으면서도 그 집합체 안에 들어있는 모든 항목에 접근할 수 있게 해 주는 방법을 제공해 준다.
+![inline-block](./Definition/IteratorPattern-definition.png)
