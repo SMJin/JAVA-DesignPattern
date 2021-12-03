@@ -12,3 +12,8 @@
 #### Waitress 에서는 인터페이스(Iterator)만 알고 있으면 된다.
 ![inline-block](./IteratorWaitress/Iterator-IteratorPattern.png)
 #### 그러나 아직 Menu 인터페이스가 완전히 똑같지 않다. Waitress 는 여전히 두 개의 구상 메뉴 클래스에 묶여있다.
+
+# Java 내장 라이브러리로 Iterator 사용하기 ([JavaUtilIterator](./JavaUtilIterator))
+#### 자바에는 java.util.Iterator 를 import 해서 사용할 수 있다.
+#### ArrayList 의 경우 이 라이브러리를 사용할 수 있기에 PancakeHouseMenu 의 경우 사용이 가능하다.
+![inline-block](./JavaUtilIterator/Iterator-IteratorPattern(2).png)
