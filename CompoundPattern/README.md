@@ -5,3 +5,6 @@
 
 # [Adaptor Pattern](./AdaptorPattern)
 ![inline-block](./AdaptorPattern/CompoundAdaptorPattern.png)
+
+# [Decorator Pattern](./DecoratorPattern)
+![inline-block](./DecoratorPattern/CompoundDecoratorPattern.png)
