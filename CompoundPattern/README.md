@@ -8,3 +8,6 @@
 
 # [Decorator Pattern](./DecoratorPattern)
 ![inline-block](./DecoratorPattern/CompoundDecoratorPattern.png)
+
+# [Factory Pattern](./FactoryPattern)
+![inline-block](./FactoryPattern/CompoundFactoryPattern.png)
