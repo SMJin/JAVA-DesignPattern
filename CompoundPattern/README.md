@@ -4,3 +4,4 @@
 ![inline-block](./StrategyPattern/CompoundStrategyPattern.png)
 
 # [Adaptor Pattern](./AdaptorPattern)
+![inline-block](./AdaptorPattern/CompoundAdaptorPattern.png)
