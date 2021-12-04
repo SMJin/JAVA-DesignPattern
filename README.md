@@ -32,3 +32,6 @@
 
 # [Iterator Pattern](./IteratorPattern)
 ##### 컬렉션 구현 방법을 노출시키지 않으면서도 그 집합체 안에 들어있는 모든 항목에 접근할 수 있게 해 주는 방법을 제공해 준다.
+
+# [Compound Pattern](./CompoundPattern)
+#### 서로 다른 패턴들을 섞어 사용하는 패턴이다.
